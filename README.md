@@ -1,4 +1,4 @@
-# mentor.in
+# Mentor.in project
 an online learning platform that pairs individuals with role models from their targeted universities and companies in various subjects.
 
 # Inspiration:
