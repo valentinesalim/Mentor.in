@@ -1,7 +1,8 @@
 ![alt text](https://res.cloudinary.com/valentinesalim/image/upload/v1597760826/Devpost_logo_copy1_teyq9n.jpg)
 
-# Mentor.in project
+# Mentor.in project 
 an online learning platform that pairs individuals with role models from their targeted universities and companies in various subjects.
+We submitted this project to [Garudahacks hackaton](https://devpost.com/software/mentor-in-69j1u7) and won 'Innovation Hack of The Year' prize.
 
 # Inspiration:
 Fun Fact: how we get our name, Mentor.in is a verb of Mentoring in Indonesian language.
