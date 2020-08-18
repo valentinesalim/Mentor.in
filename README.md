@@ -1,3 +1,5 @@
+![alt text](https://res.cloudinary.com/valentinesalim/image/upload/v1597760826/Devpost_logo_copy1_teyq9n.jpg)
+
 # Mentor.in project
 an online learning platform that pairs individuals with role models from their targeted universities and companies in various subjects.
 
