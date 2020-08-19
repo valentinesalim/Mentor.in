@@ -2,7 +2,7 @@
 
 # Mentor.in project 
 Mentor.in is an online learning platform that pairs individuals with role models from their targeted universities and companies in various subjects.
-We submitted this project to [Garudahacks Hackaton](https://devpost.com/software/mentor-in-69j1u7) and won 'Innovation Hack of The Year' prize.
+We submitted this project to [Garudahacks Hackaton](https://devpost.com/software/mentor-in-69j1u7).
 
 # Inspiration:
 Fun Fact: how we get our name, Mentor.in is a verb of Mentoring in Indonesian language.
