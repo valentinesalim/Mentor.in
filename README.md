@@ -1,6 +1,6 @@
 ![alt text](https://res.cloudinary.com/valentinesalim/image/upload/v1597760826/Devpost_logo_copy1_teyq9n.jpg)
 
-# Mentor.in project 
+# Mentor.in project
 Mentor.in is an online learning platform that pairs individuals with role models from their targeted universities and companies in various subjects.
 We submitted this project to [Garudahacks Hackaton](https://devpost.com/software/mentor-in-69j1u7).
 
@@ -25,3 +25,5 @@ We learned how to prioritise things, obviously we won’t have enough time to im
 
 # What’s next for Mentor.in ?
 We plan to build our own messaging systems with a better use of user’s data. And we hope to partner up with companies and universities across Indonesia to hold their seminars/talks in our platform. Let’s create a positive movement and inspire our young generations.
+
+Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
