@@ -1,12 +1,71 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+$main-color: #c85051;
+
+.navbar-container {
+  background: $main-color;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index : 10;
+  box-sizing: border-box;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-search {
+  margin: 20px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.avatar {
+  object-fit: cover;
+}
+.avatar-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  height: 70px;
+}
+
+.links-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.links-container a {
+  color: white;
+  text-decoration: none;
+  margin: 0 24px;
+  font-size: 18px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+
+.font-primary {
+  color: white;
+}
+
+.font-primary:hover {
+  color: #fdadb5;
+  text-decoration: none!important;
+}
+
+.content {
+  padding: 16px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 24px;
+  font-size: 18px;
+
+  &:hover {
+    color: grey;
+  }
 }

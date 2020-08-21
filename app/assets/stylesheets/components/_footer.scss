@@ -1,0 +1,48 @@
+$main-color: #c85051;
+
+.footer {
+    width: 100%;
+    background: $main-color;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 32px;
+    align-items: center;
+}
+.footer-links {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a {
+    color: white;
+    opacity: 0.50;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 16px;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer .container h1 {
+    color: white;
+    opacity: 0.50;
+    font-size: 20px;
+}
+
+.footer .container h6 {
+    color: white;
+    opacity: 0.50;
+    text-align: right;
+}
+
+
+.footer .container a {
+    margin-top: -5px;
+    font-size: 20px;
+    color: white;
+    opacity: 0.50;
+    text-decoration: none;
+}

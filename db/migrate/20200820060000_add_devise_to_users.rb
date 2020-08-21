@@ -12,12 +12,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
       t.datetime :reset_password_sent_at
 
       ## Rememberable
-      t.datetime :remember_created_at
-      t.string :fullname
-      t.string :title
-      t.string :expertise
-      t.string :about
-      t.string :content
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
