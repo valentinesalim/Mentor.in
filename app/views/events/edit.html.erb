@@ -1,6 +1,20 @@
-<h1>Editing Event</h1>
+<div class="content col-md-4 offset-md-1">
+    <br>
+    <h1><strong> Edit Class </strong></h1>
+    <%= simple_form_for(@event) do |f| %>
+    <div class="form-inputs">
+        <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :category %>
+      <%= f.input :difficulty %>
+      <%= f.input :link %>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class="form-actions">
+        <%= f.button :submit, class:"btn btn-danger" %>
+    </div>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+    <% end %>
+    <br>
+    <br>
+</div>

@@ -1,74 +1,52 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-
-  # GET /appointments
-  # GET /appointments.json
-  def index
-    @appointments = Appointment.all
+  before_action :find_appointment, only: [:update, :destroy]
+  skip_before_action :verify_authenticity_token
+ def index
+    @appointments = Appointment.where(requester_id: current_user)
+    @owner_appointments = current_user.appointments_as_owner
   end
 
-  # GET /appointments/1
-  # GET /appointments/1.json
-  def show
+  def user_appointment
+    user = User.find(params[:user_id])
+    @appointments = Appointment.where(requester_id: user)
+    @owner_appointments = user.appointments_as_owner
   end
 
-  # GET /appointments/new
-  def new
-    @appointment = Appointment.new
-  end
-
-  # GET /appointments/1/edit
-  def edit
-  end
-
-  # POST /appointments
-  # POST /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
+    @event = Event.find(params[:event_id])
+    # user = User.find(params[:user_id])
+    # @user = current_user
 
-    respond_to do |format|
-      if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
-      else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
+    # @appointment.requester_id = user
+
+    @appointment.event_id = @event.id
+    if @appointment.save
+      redirect_to user_path(current_user.id)
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /appointments/1
-  # PATCH/PUT /appointments/1.json
   def update
-    respond_to do |format|
-      if @appointment.update(appointment_params)
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @appointment }
-      else
-        format.html { render :edit }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
-    end
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(appointment_finished_params)
   end
 
-  # DELETE /appointments/1
-  # DELETE /appointments/1.json
   def destroy
     @appointment.destroy
-    respond_to do |format|
-      format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_appointment
-      @appointment = Appointment.find(params[:id])
-    end
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def appointment_params
-      params.require(:appointment).permit(:status, :date)
-    end
+  def appointment_params
+    params.require(:appointment).permit(:date, :requester_id)
+  end
+
+  def appointment_finished_params
+    params.permit(:status)
+  end
 end

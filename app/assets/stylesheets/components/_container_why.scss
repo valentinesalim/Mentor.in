@@ -6,11 +6,11 @@
     box-shadow: 0 0 2px #4e4d4d;
     text-align: center;
     padding: 10px;
-    margin-right: 70px;
+    margin: 50px;
 }
 
 .card-why img {
-    height: 200px;
+    height: 320px;
 }
 
 .card-why h3 {
@@ -35,19 +35,21 @@
     font-size: 20px;
     color: #383F51;
     font-weight: bolder;
-    text-align: center;
     p {
       font-weight: lighter;
+    }
+
+    h1 {
+      text-align: center;
     }
 }
 
 
 .cards-why-container {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 5px;
     justify-content: center;
-    padding-left: 60px;
 }
 
 .cards-why h2 {
