@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   def show
     set_user
     @events_user = Event.where(user: current_user)
     @appointments_user = Appointment.where(user: current_user)
-    # @order = Order.find(params[:order_id])
-    # @weekly_ingredient_list = @orders_user.weekly_ingredient_list
+
   end
 
   def edit
@@ -29,6 +29,5 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    authorize @user
   end
 end
