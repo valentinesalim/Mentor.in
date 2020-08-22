@@ -1,0 +1,21 @@
+<% @events.each do |event| %>
+  <div class="card child-row" style="width: 20rem; margin: 10px">
+
+    <div class="card-event-img">
+      <% if event.photo.attached? %>
+        <%= link_to event_path(recipe) do %>
+          <%= cl_image_tag event.photo.key , class:"card-img-top card-event-img"%>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"><strong><%= event.title %></strong></h4>
+      <p><%= event.category %></p>
+      <i class="far fa-clock"> <%= event.time %> Minutes</i>
+    </div>
+
+  </div>
+<% end %>
+
+
