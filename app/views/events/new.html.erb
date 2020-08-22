@@ -7,9 +7,10 @@
     <div class="form-inputs">
         <%= f.input :title %>
       <%= f.input :description %>
-      <%= f.input :category %>
-      <%= f.input :difficulty %>
-      <%= f.input :link %>
+      <%= f.input :date, as: :date %>
+      <%= f.input :category, label: "Category",  collection: $categories%>
+      <%= f.input :difficulty, label: "Difficulty",  collection: $difficulties%>
+      <%= f.input :link, placeholder: "Google Meet/ Zoom", hint: "Enter a valid meeting URL link" %>
       <%= f.input :photo, as: :file %>
     </div>
     <div class="form-actions">
