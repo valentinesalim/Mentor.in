@@ -1,13 +1,17 @@
-<p id="notice"><%= notice %></p>
-<div class="banner-sml">
-  <dir class="container sub-banner">
-    <h1>Browse through our classes category</h1>
-  </dir>
+<div class="banner-event" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(<%= asset_path 'bg.jpg' %>);">
+  <div class="banner-sml">
+    <div class="container sub-banner">
+      <h1 style="color: #C95051;"><strong>Browse through our classes category</strong></h1>
+      <a class="btn btn-dark" href="/events">Design</a>
+      <a class="btn btn-dark" href="/events">Business</a>
+      <a class="btn btn-dark" href="/events">Technology</a>
+    </div>
+  </div>
 </div>
 
 <div id="events" class="cards">
-    <%= render 'shared/card_event', events: @events %>
-  </div>
+  <%= render 'shared/card_event', events: @events %>
 </div>
-<br>
 
+<br>
+<br>
