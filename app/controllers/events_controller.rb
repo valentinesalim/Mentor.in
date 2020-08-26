@@ -3,11 +3,10 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.all.order(name: :asc)
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def new
@@ -18,34 +17,35 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      redirect_to @event
+      redirect_to @event, notice: 'Your event has been created'
     else
       render :new
     end
   end
 
+  def edit
+  end
+
+
 
   def update
-    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to events_path
     else
-      render_error
+      render :edit
     end
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
+    redirect_to events_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :description, :category, :difficulty, :link, :photo)
     end
