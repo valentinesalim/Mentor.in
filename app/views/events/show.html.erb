@@ -30,6 +30,16 @@
   <%= @event.link %>
 </p>
 
+<p>
+  <strong>Start time</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>End time</strong>
+  <%= @event.end_time %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 

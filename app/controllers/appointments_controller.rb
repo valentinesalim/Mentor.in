@@ -1,25 +1,22 @@
 class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:update, :destroy]
-  skip_before_action :verify_authenticity_token
+  before_action :find_event, only: [:new,:create]
+
+
  def index
     @appointments = Appointment.where(requester_id: current_user)
     @owner_appointments = current_user.appointments_as_owner
   end
 
-  def user_appointment
-    user = User.find(params[:user_id])
-    @appointments = Appointment.where(requester_id: user)
-    @owner_appointments = user.appointments_as_owner
+
+  def new
+    @appointment = Appointment.new
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
-    @event = Event.find(params[:event_id])
-    # user = User.find(params[:user_id])
-    # @user = current_user
-
-    # @appointment.requester_id = user
-
+    set_current_user
+    @appointment.requester_id = @user.id
     @appointment.event_id = @event.id
     if @appointment.save
       redirect_to user_path(current_user.id)
@@ -48,5 +45,13 @@ class AppointmentsController < ApplicationController
 
   def appointment_finished_params
     params.permit(:status)
+  end
+
+  def set_current_user
+    @user = current_user
+  end
+
+  def find_event
+    @event = Event.find(params[:event_id])
   end
 end

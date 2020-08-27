@@ -32,6 +32,8 @@ puts "Creating users"
       category: ['Education','Technology','Business'].sample,
       difficulty: ['Easy','Hard','Median'].sample,
       link: Faker::Internet.url(host: 'example.com'),
+      date:Faker::Time.forward(days: 23, period: :morning),
+      end_time:Faker::Time.forward(days: 23, period: :morning),
       user: user
     )
   end
