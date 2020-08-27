@@ -1,3 +1,6 @@
+Review.destroy_all
+Appointment.destroy_all
+Event.destroy_all
 User.destroy_all
 
 
@@ -31,5 +34,22 @@ puts "Creating users"
       link: Faker::Internet.url(host: 'example.com'),
       user: user
     )
+  end
+  puts "Creating Appointments...."
+  rand(1..3).times do
+    appointment = Appointment.create!(
+      date: Faker::Date.forward(days: rand(1..3)),
+      event: Event.all.sample,
+      requester: User.all.sample
+      )
+    puts "Creating Reviews....."
+    rand(1..3).times do
+      review = Review.create!(
+        title:Faker::GreekPhilosophers.quote,
+        content:Faker::Lorem.sentence(word_count: 14, supplemental: true),
+        appointment: appointment,
+        rating: rand(1..5),
+      )
+    end
   end
 end

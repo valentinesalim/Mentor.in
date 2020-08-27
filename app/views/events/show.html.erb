@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<img style="height:300px; width:auto"; src="<%= cl_image_path @event.photo.key %>">
+<% if @event.photo.attached? %>
+        <%= link_to event_path(event) do %>
+          <%= cl_image_tag @event.photo.key , class:"card-img-top card-event-img"%>
+        <% end %>
+      <% end %>
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
@@ -28,3 +32,24 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+
+
+<h5>Host</h5>
+  <ul>
+    <li>Host Name: <%= @event.user.fullname %></li>
+    <li>Host Expertise: <%= @event.user.expertise %></li>
+    <li>Host Profile: <%= @event.user.content %></li>
+    <li><%= link_to 'Learn more about the host', user_path(@event.user.id)  %></li>
+  </ul>
+<h5><%= link_to 'Register the event', new_event_appointment_path(@event.id) %></h5>
+<h4>Review</h4>
+<% @event.appointments.each do |appointment| %>
+    <% appointment.reviews.each do |review| %>
+      <ul>
+        <li>title: <%= review.title %></li>
+        <li>content: <%= review.content %></li>
+        <li>rating: <%= review.rating %></li>
+     </ul>
+    <% end %>
+<% end %>
