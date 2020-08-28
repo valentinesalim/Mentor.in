@@ -1,5 +1,19 @@
-<h1>New Review</h1>
-
-<%= render 'form', review: @review %>
-
-<%= link_to 'Back', reviews_path %>
+<div class="container">
+  <h1>Leave review for class</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2 my-2">
+      <%= simple_form_for [@appointment, @review] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :content %>
+          <%= f.input :rating %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

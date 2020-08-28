@@ -55,3 +55,26 @@ puts "Creating users"
     end
   end
 end
+
+test_event = Event.all.sample
+test_event.user = test_user
+test_event.save
+puts "creating test appointment"
+rand(1..3).times do
+  appointment = Appointment.create!(
+    date: Faker::Date.forward(days: rand(1..3)),
+    event: test_event,
+    requester: User.all.sample
+  )
+  puts"creating test review"
+  rand(1..2).times do
+    review = Review.create!(
+      title:Faker::GreekPhilosophers.quote,
+      content:Faker::Lorem.sentence(word_count: 14, supplemental: true),
+      appointment: appointment,
+      rating: rand(1..5),
+      )
+  end
+end
+
+puts "Finished"
