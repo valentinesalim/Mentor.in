@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+
   def new
     @review = Review.new
     @appointment = Appointment.find(params[:appointment_id])
@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @appointment = Appointment.find(params[:appointment_id])
     @review.appointment_id = @appointment.id
     if @review.save
-      redirect_to @review
+      redirect_to appointments_path
     else
       render :new
     end
