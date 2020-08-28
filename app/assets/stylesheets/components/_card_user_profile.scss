@@ -1,0 +1,48 @@
+.user-card-container {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+}
+
+.card-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.user-card-container .avatar {
+  border-radius:24;
+  position: absolute;
+}
+
+.info-container {
+  padding-left: 36px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  flex: 1;
+}
+
+
+.center {
+  margin: auto;
+  width: 100%;
+  padding-top : 24px;
+}
+
+

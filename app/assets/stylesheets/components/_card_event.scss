@@ -91,6 +91,9 @@
   }
 }
 
+.container {
+    max-width: 1100px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

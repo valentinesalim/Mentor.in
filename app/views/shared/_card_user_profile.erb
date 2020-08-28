@@ -1,0 +1,14 @@
+
+<div class="user-card-container">
+  <%= cl_image_tag current_user.avatar, crop: :thumb, gravity: :face, class: "avatar-profile" %>
+  <div class="info-container row">
+    <div class="top">
+      <div>
+      <h4><strong><%= @event.user.fullname %></strong></h4>
+      <p> @event.user.expertise </p>
+      <button class="btn btn-success m-1"><%= link_to 'Go to profile', user_path(@event.user.id)  %></button>
+      </div>
+    </div>
+  </div>
+</div>
+

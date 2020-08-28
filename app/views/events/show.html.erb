@@ -5,54 +5,6 @@
           <%= cl_image_tag @event.photo.key , class:"card-img-top card-event-img"%>
         <% end %>
       <% end %>
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @event.category %>
-</p>
-
-<p>
-  <strong>Difficulty:</strong>
-  <%= @event.difficulty %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @event.link %>
-</p>
-
-<p>
-  <strong>Start time</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>End time</strong>
-  <%= @event.end_time %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
-
-
-
-<h5>Host</h5>
-  <ul>
-    <li>Host Name: <%= @event.user.fullname %></li>
-    <li>Host Expertise: <%= @event.user.expertise %></li>
-    <li>Host Profile: <%= @event.user.content %></li>
-    <li><%= link_to 'Learn more about the host', user_path(@event.user.id)  %></li>
-  </ul>
-<h5><%= link_to 'Register the event', new_event_appointment_path(@event.id) %></h5>
 <h4>Review</h4>
 <% @event.appointments.each do |appointment| %>
     <% appointment.reviews.each do |review| %>
@@ -63,3 +15,30 @@
      </ul>
     <% end %>
 <% end %>
+
+
+
+<div class="container d-flex">
+  <div>
+    <h3 class="my-1"><strong>About this class </strong></h3>
+    <p><%= @event.description %><p>
+    <div class="center">
+      <%= render "shared/card_user_profile" %>
+    </div>
+
+
+  </div>
+  <div class="event-info-card my-3">
+    <p><strong>Quota:  </strong>Unlimited</p>
+    <p><strong>Difficulty: </strong><%= @event.difficulty %></p>
+    <p><strong>Price: free </strong></p>
+    <p><strong>Date & Time: </strong>@event.date </p>
+
+
+    <div class="d-flex">
+      <br>
+      <button class="btn btn-success m-1"><%= link_to 'Register', new_event_appointment_path(@event.id) %></button>
+    </div>
+  </div>
+</div>
+
