@@ -20,12 +20,18 @@
   border: white 1px solid;
 }
 
+.avatar-profile-on-usershow {
+  width: 80px;
+  height: 80px;
+  border-radius:50%;
+  object-fit: cover;
+  object-position: center;
+}
 
 .avatar-profile {
-  width: 164px;
-  height: 164px;
-  border-radius:50%
-
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 .dropdown-item {
