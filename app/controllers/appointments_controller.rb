@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     @appointment.requester_id = @user.id
     @appointment.event_id = @event.id
     if @appointment.save
-      redirect_to user_path(current_user.id)
+      redirect_to appointments_path(current_user.id)
     else
       render :new
     end

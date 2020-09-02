@@ -1,0 +1,22 @@
+<%   @appointments.each do |appointment| %>
+  <div class="card child-row" style="width: 20rem; margin: 10px">
+
+    <div class="card-event-img">
+      <% if appointment.event.photo.attached? %>
+        <%= link_to event_path(appointment.event) do %>
+          <%= cl_image_tag appointment.event.photo.key , class:"card-img-top card-event-img"%>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"><strong><%= appointment.event.title %></strong></h4>
+      <p><%= appointment.event.category %></p>
+      <i class="far fa-calendar-alt"> <%= appointment.event.date %> Minutes</i>
+      <br>
+      <i class="fas fa-external-link-square-alt"> <%= appointment.event.difficulty %> </i>
+    </div>
+  </div>
+<% end %>
+
+

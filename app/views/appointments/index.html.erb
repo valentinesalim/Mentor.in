@@ -1,31 +1,12 @@
-<h5>Class I registered</h5>
-<ul>
-  <% @appointments.each do |appointment| %>
-    <li>Event Name: <%= appointment.event.title %></li>
-    <li>Host Name: <%= appointment.event.user.fullname %></li>
-    <li>Event Type: <%= appointment.event.link %></li>
-    <li>Appointment Date: <%= appointment.date %></li>
-    <% if appointment.status.nil? %>
-      <%= link_to 'Finished', appointment_path(appointment.id, status: true), method: :put, :class =>"btn btn-sm btn-success mx-3" %>
-      <%= link_to 'Cancel', appointment_path(appointment), method: :delete, data: {confirm: "Are you sure you want to cancel the event?"}, :class =>"btn btn-sm btn-danger mx-3" %>
-    <% else %>
-      <% if appointment.reviews.exists? %>
-        <p>Thanks for your review!</p>
-        <% appointment.reviews.each do |review| %>
-          Review title: <%= review.title %>
-          Review rating: <%= review.rating %>
-        <% end %>
-      <% else %>
-        <%= link_to 'Leave a review for the event', new_appointment_review_path(appointment) %>
-      <% end %>
-    <% end %>
-  <% end %>
-</ul>
-<h5>Student I got</h5>
-<ul>
-  <% @owner_appointments.each do |appointment| %>
-    <li>Event Name: <%= appointment.event.title %></li>
-    <li>Appointment Date: <%= appointment.date %></li>
-    <li>Attendent Name: <%= appointment.requester.fullname %></li>
-  <% end %>
-</ul>
+<div class="banner-event" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(<%= asset_path 'bg.jpg' %>);">
+  <div class="banner-sml">
+    <div class="container sub-banner">
+      <h1 style="color: #C95051;"><strong>My Class</strong></h1>
+      <p style="color: white;">All registered class</p>
+    </div>
+  </div>
+</div>
+<div id="events" class="cards my-5">
+  <%= render 'shared/card_my_event', appointments: @appointment %>
+</div>
+
