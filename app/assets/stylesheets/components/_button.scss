@@ -1,5 +1,19 @@
 .btn-color {
   background-color: #C95051;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.btn-color-class {
+  background-color: #C95051;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
   a {
     color: white;
     text-decoration: none;
