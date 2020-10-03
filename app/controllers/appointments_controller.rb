@@ -18,6 +18,7 @@ class AppointmentsController < ApplicationController
     set_current_user
     @appointment.requester_id = @user.id
     @appointment.event_id = @event.id
+    @appointment.date = Time.now
     if @appointment.save
       redirect_to appointments_path(current_user.id)
     else
@@ -42,7 +43,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:date, :requester_id)
+    params.require(:appointment).permit(:comment, :requester_id)
   end
 
   def appointment_finished_params

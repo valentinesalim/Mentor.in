@@ -1,7 +1,9 @@
 <div class="banner-weekly" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(<%= asset_path 'class-show.jpg' %>);">
   <div class="poster-event">
-    <%= link_to event_path(@event) do %>
-      <%= cl_image_tag @event.photo.key , class:"poster"%>
+    <% if @event.photo.attached? %>
+      <%= link_to event_path(@event) do %>
+        <%= cl_image_tag @event.photo.key , class:"poster"%>
+      <% end %>
     <% end %>
   </div>
   <div class="container">
