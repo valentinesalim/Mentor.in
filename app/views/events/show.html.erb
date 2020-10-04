@@ -29,7 +29,7 @@
       <p><strong>Quota:  </strong>Unlimited</p>
       <p><strong>Difficulty: </strong><%= @event.difficulty %></p>
       <p><strong>Price: </strong>free </p>
-      <p><strong>Date & Time: </strong>@event.date </p>
+      <p><strong>Date & Time: </strong><%=@event.date.strftime("%b %e, %l:%M %p")%> </p>
       <div class="d-flex">
         <button class="btn btn-color m-1"><%= link_to 'Register', new_event_appointment_path(@event.id) %></button>
       </div>

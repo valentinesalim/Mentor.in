@@ -2,8 +2,8 @@
 <div class="user-card-container-on-profile">
   <%= cl_image_tag current_user.avatar, crop: :thumb, gravity: :face, class: "avatar-profile-on-usershow" %>
   <div class="info-container">
-    <h4><strong><%= @event.user.fullname %></strong></h4>
-    <p> @event.user.expertise </p>
+    <h4><strong><%= link_to @event.user.fullname, user_path(@event.user.id) %></strong></h4>
+    <p> <%=@event.user.expertise%> </p>
   </div>
 </div>
 
