@@ -10,14 +10,37 @@
       <a class="btn btn-dark" href="/events">IT Consulting</a>
       <a class="btn btn-dark" href="/events">Tech Startup</a>
     </div>
+     <% if @user.id == current_user.id %>
     <div class="edit-btn">
-      <%= link_to 'Edit', edit_user_path(@user)  %>
+      <%= link_to 'Edit my profile', edit_user_registration_path %>
     </div>
+      <% end %>
   </div>
   <h1> <strong> Profile </strong></h1>
   <hr>
   <p><strong>About </strong><%= @user.about %></p>
   <p><strong>Experience </strong><%= @user.expertise %></p>
   <p><strong>Education </strong><%= @user.content %></p>
+  <h1> <strong> Class </strong></h1>
+  <hr>
+  <% @user.events.each do |event| %>
+        <ul>
+          <li>Event Name:<%= event.title %></li>
+        </ul>
+  <% end %>
+  <h1> <strong> Review </strong></h1>
+  <hr>
+   <% @user.events.each do |event| %>
+   <% event.appointments.each do |appointment| %>
+
+
+   <% appointment.reviews.each do |review| %>
+   <ul>
+   <li><%= review.title %></li>
+   </ul>
+   <% end %>
+   <% end %>
+  <% end %>
+
 </div>
 
