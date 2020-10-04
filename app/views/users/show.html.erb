@@ -1,7 +1,23 @@
-<p><strong>Name: </strong><%= @user.fullname %></p>
-<p><strong>Email: </strong><%= @user.email %></p>
-<p><strong>Title </strong><%= @user.title %></p>
-<p><strong>About </strong><%= @user.about %></p>
-<p><strong>Expertise </strong><%= @user.expertise %></p>
-<p><strong>Content </strong><%= @user.content %></p>
-<%= link_to 'edit', edit_user_path(@user), class: "btn btn-color" %>
+<div class="container" style=" margin-bottom: 70px;">
+  <div class="user-card-container">
+    <img class="user-avatar-profile" <%= cl_image_tag current_user.avatar %>
+    <div style="display:inline-block"; class="info-container">
+      <br>
+      <h2><strong><%= @user.fullname %></strong></h2>
+      <p><%= @user.title %></p>
+      <p><strong>4.9 </strong>(1000 reviews)</p>
+      <a class="btn btn-dark" href="/events">Tech & Engineering</a>
+      <a class="btn btn-dark" href="/events">IT Consulting</a>
+      <a class="btn btn-dark" href="/events">Tech Startup</a>
+    </div>
+    <div class="edit-btn">
+      <%= link_to 'Edit', edit_user_path(@user)  %>
+    </div>
+  </div>
+  <h1> <strong> Profile </strong></h1>
+  <hr>
+  <p><strong>About </strong><%= @user.about %></p>
+  <p><strong>Experience </strong><%= @user.expertise %></p>
+  <p><strong>Education </strong><%= @user.content %></p>
+</div>
+

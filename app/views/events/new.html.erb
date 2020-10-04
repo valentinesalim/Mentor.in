@@ -1,23 +1,25 @@
 
+<div class="container" style=" margin-bottom: 70px;">
+  <div class="user-card-container">
+    <div class="content">
+        <br>
+        <h1 style="color: #39454C"><strong> Add Class </strong></h1>
+        <hr>
+        <%= simple_form_for(@event) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :date, as: :datetime %>
+          <%= f.input :category, label: "Category",  collection: $categories%>
+          <%= f.input :difficulty, label: "Difficulty",  collection: $difficulties%>
+          <%= f.input :link, placeholder: "Google Meet/ Zoom", hint: "Enter a valid meeting URL link" %>
+          <%= f.input :photo, as: :file %>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, class:"btn btn-color" %>
+        </div>
 
-<div class="content col-md-4 offset-md-1">
-    <br>
-    <h1><strong> Add Class </strong></h1>
-    <%= simple_form_for(@event) do |f| %>
-    <div class="form-inputs">
-        <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :date, as: :datetime %>
-      <%= f.input :category, label: "Category",  collection: $categories%>
-      <%= f.input :difficulty, label: "Difficulty",  collection: $difficulties%>
-      <%= f.input :link, placeholder: "Google Meet/ Zoom", hint: "Enter a valid meeting URL link" %>
-      <%= f.input :photo, as: :file %>
+        <% end %>
     </div>
-    <div class="form-actions">
-        <%= f.button :submit, class:"btn btn-danger" %>
-    </div>
-
-    <% end %>
-    <br>
-    <br>
+  </div>
 </div>

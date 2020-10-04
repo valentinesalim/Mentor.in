@@ -1,36 +1,38 @@
-<div class="banner-weekly" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(<%= asset_path 'class-show.jpg' %>);">
-  <div class="poster-event">
-    <% if @event.photo.attached? %>
-      <%= link_to event_path(@event) do %>
-        <%= cl_image_tag @event.photo.key , class:"poster"%>
+<div style="margin-bottom: 70px">
+  <div class="banner-weekly" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(<%= asset_path 'class-show.jpg' %>);">
+    <div class="poster-event">
+      <% if @event.photo.attached? %>
+        <%= link_to event_path(@event) do %>
+          <%= cl_image_tag @event.photo.key , class:"poster"%>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="container">
-    <p><%=@event.user.fullname%> teaches</p>
-    <h1> <%=@event.title%> </h1>
-  </div>
-</div>
-
-
-
-<div class="container d-flex justify-content-between">
-  <div style="width: 70%;">
-    <div class="show-info-container my-3">
-      <h3><strong>About this class </strong></h3>
-      <p><%= @event.description %></p>
     </div>
-    <div class="my-4">
-        <%= render "shared/card_user_profile" %>
+    <div class="container">
+      <p><%=@event.user.fullname%> teaches</p>
+      <h1> <%=@event.title%> </h1>
     </div>
   </div>
-  <div class="class-info-card my-3" style="width: 28%">
-    <p><strong>Quota:  </strong>Unlimited</p>
-    <p><strong>Difficulty: </strong><%= @event.difficulty %></p>
-    <p><strong>Price: </strong>free </p>
-    <p><strong>Date & Time: </strong>@event.date </p>
-    <div class="d-flex">
-      <button class="btn btn-color m-1"><%= link_to 'Register', new_event_appointment_path(@event.id) %></button>
+
+
+
+  <div class="container d-flex justify-content-between">
+    <div style="width: 70%;">
+      <div class="show-info-container my-3">
+        <h3><strong>About this class </strong></h3>
+        <p><%= @event.description %></p>
+      </div>
+      <div class="my-4">
+          <%= render "shared/card_user_profile" %>
+      </div>
+    </div>
+    <div class="class-info-card my-3" style="width: 28%">
+      <p><strong>Quota:  </strong>Unlimited</p>
+      <p><strong>Difficulty: </strong><%= @event.difficulty %></p>
+      <p><strong>Price: </strong>free </p>
+      <p><strong>Date & Time: </strong>@event.date </p>
+      <div class="d-flex">
+        <button class="btn btn-color m-1"><%= link_to 'Register', new_event_appointment_path(@event.id) %></button>
+      </div>
     </div>
   </div>
 </div>

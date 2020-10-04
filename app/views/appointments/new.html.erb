@@ -1,17 +1,27 @@
+<br>
+<br>
+
 <div class="container">
-  <h1>Register the class</h1>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8 offset-sm-2 my-2">
+  <div class="user-card-container">
+    <div class="content">
+      <h1 style="color: #39454C"><strong> Register for this class? </strong></h1>
+      <p style="color: #39454C"> Say something to the instructor </p>
       <%= simple_form_for [@event, @appointment] do |f| %>
         <div class="form-inputs">
           <%= f.input :comment %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <%= f.button :submit, class:"btn btn-color" %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
