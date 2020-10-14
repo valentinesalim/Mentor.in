@@ -6,8 +6,8 @@
     <div class="navbar-search"> <%= render 'shared/search' %></div>
     <div class="links-container">
       <%= link_to "Explore Class", events_path, class: "navbar-link" %>
-      <%= link_to "Join Community", "#", class: "navbar-link" %>
-      <%= link_to "Partners", "#", class: "navbar-link" %>
+      <%= link_to "Join Community", joincommunity_path, class: "navbar-link" %>
+      <%= link_to "Partners", partner_path, class: "navbar-link" %>
     </div>
     <div class="avatar-container">
       <% if user_signed_in? %>
