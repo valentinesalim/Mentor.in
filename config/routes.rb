@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
-  resources :reviews
+  get 'joincommunity', to: 'pages#joincommunity'
+  get 'partner', to: 'pages#partner'
+
 
   resources :events do
     resources :appointments, only: [:new,:create]
