@@ -12,12 +12,10 @@
     <div class="card-body">
       <h4 class="card-title"><strong><%= event.title %></strong></h4>
       <p><%= event.category %></p>
-      <i class="far fa-calendar-alt"> <%= event.date %> Minutes</i>
+      <i class="far fa-calendar-alt"> <%= event.date.strftime("%b %e, %l:%M %p") %></i>
       <br>
       <i class="fas fa-external-link-square-alt"> <%= event.difficulty %> </i>
       <%= link_to "Detail", event %>
     </div>
   </div>
 <% end %>
-
-
